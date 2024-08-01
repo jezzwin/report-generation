@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './HomePage.css'; // Import the CSS file for styling
+import './HomePage.css';
 
 const HomePage: React.FC = () => {
   const [reportId, setReportId] = useState<string | null>(null);
   const [status, setStatus] = useState<string>('PENDING');
-  const [data, setData] = useState<any[]>([]); // Changed to array type
+  const [data, setData] = useState<any[]>([]);
 
   const generateReport = async () => {
     try {
       const response = await axios.get('http://localhost:5000/generate');
       setReportId(response.data.reportId);
       setStatus('PENDING');
-      setData([]); // Clear previous data
+      setData([]);
       pollReportStatus(response.data.reportId);
     } catch (error) {
       console.error('Error generating report:', error);
@@ -34,13 +34,13 @@ const HomePage: React.FC = () => {
         console.error('Error polling report status:', error);
         clearInterval(interval);
       }
-    }, 10000); // Poll every 10 seconds
+    }, 10000);
   };
 
   const handleGenerateAgain = () => {
     setReportId(null);
-    setStatus('PENDING'); // Reset status to PENDING
-    setData([]); // Clear previous data
+    setStatus('PENDING');
+    setData([]);
   };
 
   return (
@@ -61,7 +61,7 @@ const HomePage: React.FC = () => {
           <p className="p1">REPORT ID: {reportId}</p>
           <p className="p2">Status: {status}</p>
           {status === 'PENDING' && (
-            <div className="loading-spinner"></div> // Show spinner while pending
+            <div className="loading-spinner"></div>
           )}
           {status === 'READY' && (
             <div>
