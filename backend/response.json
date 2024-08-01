@@ -1,0 +1,40 @@
+{
+    "status": "READY",
+    "data": [
+        {
+            "id": 1,
+            "sales": 40,
+            "purchases": 4,
+            "asin": "B076587CQ",
+            "date": "2024-03-01"
+        },
+        {
+            "id": 2,
+            "sales": 65,
+            "purchases": 5,
+            "asin": "B0IUEX653",
+            "date": "2024-03-02"
+        },
+        {
+            "id": 3,
+            "sales": 77,
+            "purchases": 7,
+            "asin": "B076587CQ",
+            "date": "2024-03-03"
+        },
+        {
+            "id": 4,
+            "sales": 50,
+            "purchases": 5,
+            "asin": "B076587CQ",
+            "date": "2024-03-04"
+        },
+        {
+            "id": 5,
+            "sales": 100,
+            "purchases": 7,
+            "asin": "B0IUEX653",
+            "date": "2024-03-05"
+        }
+    ]
+}
